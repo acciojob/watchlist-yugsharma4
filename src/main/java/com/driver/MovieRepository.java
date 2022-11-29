@@ -20,7 +20,6 @@ public class MovieRepository {
     //Add new movie
     public void addMovieInDB(Movie movie){
         movies.put(movie.getName(),movie);
-//        System.out.println(movies.containsKey(movie.getName()));
     }
 
     //Add new director
@@ -91,12 +90,9 @@ public class MovieRepository {
         }else{
             return "Director does not exist!!!";
         }
-
-        if(!list.isEmpty()){
-            for(String movie : list) {
+        for(String movie : list) {
                 movies.remove(movie);
             }
-        }
 
         return "Director has been successfully deleted!!!";
     }
