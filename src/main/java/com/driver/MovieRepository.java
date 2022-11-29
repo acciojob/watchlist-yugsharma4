@@ -79,20 +79,15 @@ public class MovieRepository {
 
     //Delete director by name
     public String deleteDirectorByNameFromDB(String directorName){
-        boolean isDirectorExist = directors.containsKey(directorName);
         List<String> list = new ArrayList<>();
 
+        list = movieDirectorDatabase.get(directorName);
+        directors.remove(directorName);
+        movieDirectorDatabase.remove(directorName);
 
-        if(isDirectorExist) {
-            list = movieDirectorDatabase.get(directorName);
-            directors.remove(directorName);
-            movieDirectorDatabase.remove(directorName);
-        }else{
-            return "Director does not exist!!!";
-        }
         for(String movie : list) {
                 movies.remove(movie);
-            }
+        }
 
         return "Director has been successfully deleted!!!";
     }
