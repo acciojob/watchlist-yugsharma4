@@ -31,19 +31,17 @@ public class MovieRepository {
     //Add Movie and Director pair
     public String addMovieDirectorPairInDB(String movieName, String directorName){
         //check director's name exist in DB or not
-
         List<String> list = new ArrayList<>();
         boolean isDirectorExist = directors.containsKey(directorName);
-
-        if(isDirectorExist){
-               list = movieDirectorDatabase.get(directorName);
-               list.add(movieName);
-               movieDirectorDatabase.put(directorName,list);
-        }else {
-                list.add(movieName);
-                movieDirectorDatabase.put(directorName,list);
+        if (isDirectorExist) {
+            list = movieDirectorDatabase.get(directorName);
+            list.add(movieName);
+            movieDirectorDatabase.put(directorName, list);
+        } else {
+            list.add(movieName);
+            movieDirectorDatabase.put(directorName, list);
         }
-        return "Movie and Director pair has been added successfully!!!";
+        return "Successful!!!";
     }
 
     //Get all movies
@@ -80,13 +78,12 @@ public class MovieRepository {
     //Delete director by name
     public String deleteDirectorByNameFromDB(String directorName){
         List<String> list = new ArrayList<>();
-
         list = movieDirectorDatabase.get(directorName);
-        directors.remove(directorName);
-        movieDirectorDatabase.remove(directorName);
 
-        for(String movie : list) {
-                movies.remove(movie);
+        movieDirectorDatabase.remove(directorName);
+        directors.remove(directorName);
+        for (String movieName : list) {
+            movies.remove(movieName);
         }
 
         return "Director has been successfully deleted!!!";
