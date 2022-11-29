@@ -104,27 +104,18 @@ public class MovieRepository {
         moviesDirectors.clear();
         return "All directors and movies associate with them are deleted!!!";
     }
-
-    //OPTIONAL (REMOVE IT LATER)
-    //Get all directors
-    public List<Director> getAllDirectorsInDB(){
-        List<Director> directorsList = new ArrayList<>();
-
-        for(Director director : directors.values()){
-            directorsList.add(director);
-        }
-
-        return directorsList;
-    }
+//
+//    //OPTIONAL (REMOVE IT LATER)
+//    //Get all directors
+//    public List<Director> getAllDirectorsInDB(){
+//        List<Director> directorsList = new ArrayList<>();
+//
+//        for(Director director : directors.values()){
+//            directorsList.add(director);
+//        }
+//
+//        return directorsList;
+//    }
 
 }
 
-class Pair{
-    Movie movie;
-    Director director;
-
-    public Pair(Movie movie,Director director){
-        this.movie = movie;
-        this.director = director;
-    }
-}

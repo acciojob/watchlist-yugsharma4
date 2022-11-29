@@ -75,12 +75,12 @@ public class MovieController {
     public ResponseEntity<String> deleteAllDirectors(){
         return new ResponseEntity(movieService.deleteAllDirectorsFromDB(),HttpStatus.GONE);
     }
-
-    //OPTIONAL (REMOVE IT LATER)
-    //Get All directors
-    @GetMapping("/movies/get-all-directors")
-    public ResponseEntity<List<Director>> findAllDirectors(){
-        return new ResponseEntity(movieService.getAllDirectorsFromDB(),HttpStatus.OK);
-    }
+//
+//    //OPTIONAL (REMOVE IT LATER)
+//    //Get All directors
+//    @GetMapping("/movies/get-all-directors")
+//    public ResponseEntity<List<Director>> findAllDirectors(){
+//        return new ResponseEntity(movieService.getAllDirectorsFromDB(),HttpStatus.OK);
+//    }
 }
 

@@ -48,8 +48,8 @@ public class MovieService {
     public String deleteAllDirectorsFromDB(){
         return movieRepository.deleteAllDirectorsFromDB();
     }
-    //OPTIONAL (REMOVE IT LATER)
-    public List<Director> getAllDirectorsFromDB(){
-        return movieRepository.getAllDirectorsInDB();
-    }
+//    //OPTIONAL (REMOVE IT LATER)
+//    public List<Director> getAllDirectorsFromDB(){
+//        return movieRepository.getAllDirectorsInDB();
+//    }
 }
