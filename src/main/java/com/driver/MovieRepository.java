@@ -47,11 +47,11 @@ public class MovieRepository {
     }
 
     //Get all movies
-    public List<Movie> getAllMoviesFromDB(){
-        List<Movie> moviesList = new ArrayList<>();
+    public List<String> getAllMoviesFromDB(){
+        List<String> moviesList = new ArrayList<>();
 
         for(Movie movie : movies.values()){
-            moviesList.add(movie);
+            moviesList.add(movie.getName());
         }
 
         return moviesList;
@@ -73,12 +73,12 @@ public class MovieRepository {
     }
 
     //Get movies by director's name
-    public List<Movie> getMoviesByDirectorNameFromDB(String name){
-        List<Movie> directorMovies = new ArrayList<>();
+    public List<String> getMoviesByDirectorNameFromDB(String name){
+        List<String> directorMovies = new ArrayList<>();
 
         for(Movie movie : moviesDirectors.keySet()){
             if(moviesDirectors.get(movie).getName().equals(name)){
-                directorMovies.add(movie);
+                directorMovies.add(movie.getName());
             }
         }
         return directorMovies;

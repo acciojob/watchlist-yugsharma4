@@ -38,7 +38,7 @@ public class MovieController {
 
     //Get All movies
     @GetMapping("/movies/get-all-movies")
-    public ResponseEntity<List<Movie>> findAllMovies(){
+    public ResponseEntity<List<String>> findAllMovies(){
         return new ResponseEntity(movieService.getAllMoviesFromDB(),HttpStatus.OK);
     }
 
@@ -56,9 +56,9 @@ public class MovieController {
 
     }
 
-    //Get Movies by Director by name
+    //Get Movies by Director name
     @GetMapping("/movies/get-movies-by-director-name/{director}")
-    public ResponseEntity<List<Movie>> getMoviesByDirectorName(@PathVariable String director){
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String director){
         return new ResponseEntity(movieService.getMoviesByDirectorName(director),HttpStatus.ACCEPTED);
 
     }
