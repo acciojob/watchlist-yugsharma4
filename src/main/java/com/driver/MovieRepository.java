@@ -32,8 +32,7 @@ public class MovieRepository {
     public String addMovieDirectorPairInDB(String movieName, String directorName){
         //check director's name exist in DB or not
         List<String> list = new ArrayList<>();
-        boolean isDirectorExist = directors.containsKey(directorName);
-        if (isDirectorExist) {
+        if (movieDirectorDatabase.containsKey(directorName)) {
             list = movieDirectorDatabase.get(directorName);
             list.add(movieName);
             movieDirectorDatabase.put(directorName, list);
@@ -71,8 +70,8 @@ public class MovieRepository {
     }
 
     //Get movies by director's name
-    public List<String> getMoviesByDirectorNameFromDB(String name){
-       return movieDirectorDatabase.get(name);
+    public List<String> getMoviesByDirectorNameFromDB(String directorName){
+       return  movieDirectorDatabase.get(directorName);
     }
 
     //Delete director by name
@@ -82,10 +81,10 @@ public class MovieRepository {
 
         movieDirectorDatabase.remove(directorName);
         directors.remove(directorName);
+
         for (String movieName : list) {
             movies.remove(movieName);
         }
-
         return "Director has been successfully deleted!!!";
     }
 
