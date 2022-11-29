@@ -39,7 +39,7 @@ public class MovieController {
     //Get All movies
     @GetMapping("/movies/get-all-movies")
     public ResponseEntity<List<String>> findAllMovies(){
-        return new ResponseEntity(movieService.getAllMoviesFromDB(),HttpStatus.OK);
+        return new ResponseEntity(movieService.getAllMoviesFromDB(),HttpStatus.ACCEPTED);
     }
 
     //Get Movie by name
@@ -66,14 +66,14 @@ public class MovieController {
     //Delete director by his/her name
     @DeleteMapping("/movies/delete-director-by-name")
     public ResponseEntity<String> deleteDirectorByName(@RequestParam("directorName") String directorName){
-        return new ResponseEntity(movieService.deleteDirectorByNameFromDB(directorName),HttpStatus.GONE);
+        return new ResponseEntity(movieService.deleteDirectorByNameFromDB(directorName),HttpStatus.OK);
 
     }
 
     //Delete all directors and movies
     @DeleteMapping("/movies/delete-all-directors")
     public ResponseEntity<String> deleteAllDirectors(){
-        return new ResponseEntity(movieService.deleteAllDirectorsFromDB(),HttpStatus.GONE);
+        return new ResponseEntity(movieService.deleteAllDirectorsFromDB(),HttpStatus.OK);
     }
 //
 //    //OPTIONAL (REMOVE IT LATER)

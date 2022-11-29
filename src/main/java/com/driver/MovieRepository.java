@@ -90,6 +90,7 @@ public class MovieRepository {
 
         if(isDirectorExist){
             directors.remove(name);
+            movies.remove(name);
             return "Director has been successfully deleted!!!";
         }
         return "Director does not exist!!!";
